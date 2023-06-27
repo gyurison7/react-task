@@ -7,7 +7,7 @@ const Working = ({ item, deleteButtonHandler, updateButtonHandler, isDone }) => 
                 <button className='todo-delete-button button' onClick={() => deleteButtonHandler(item.id)}>삭제하기</button>
                 {
                     isDone === true ?
-                        <button className='todo-complete-button button' onClick={() => updateButtonHandler(item.id, 'cancle')}>취소</button>
+                        <button className='todo-complete-button button' onClick={() => updateButtonHandler(item.id, 'cancel')}>취소</button>
                         : <button className='todo-complete-button button' onClick={() => updateButtonHandler(item.id, 'done')}>완료</button>
                 }
 
