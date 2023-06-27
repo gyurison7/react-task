@@ -35,16 +35,10 @@ function App() {
     setTodoList(newTodoList)
   }
 
-  // 완료
-  const doneButtonHandler = (id) => {
+  // 완료 or 취소
+  const updateButtonHandler = (id, btn) => {
     const tempTodoList = todoList.filter((list) => list.id === id);
-    setTodoList([...todoList, tempTodoList[0].isDone = true])
-  }
-
-  // 취소
-  const cancelButtonHandler = (id) => {
-    const tempTodoList = todoList.filter((list) => list.id === id);
-    setTodoList([...todoList, tempTodoList[0].isDone = false])
+    btn === 'done' ? setTodoList([...todoList, tempTodoList[0].isDone = true]) : setTodoList([...todoList, tempTodoList[0].isDone = false])
   }
 
   return (
@@ -67,16 +61,16 @@ function App() {
         <div className='list-wrapper'>
           {
             todoList.filter((value) => value.isDone === false)
-              .map((item) => (<Working key={item.id} item={item} deleteButtonHandler={deleteButtonHandler} doneButtonHandler={doneButtonHandler}
-                cancelButtonHandler={cancelButtonHandler} isDone={item.isDone} />))
+              .map((item) => (<Working key={item.id} item={item} deleteButtonHandler={deleteButtonHandler} 
+                updateButtonHandler={updateButtonHandler} isDone={item.isDone} />))
           }
         </div>
         <h2>Done🎉</h2>
         <div className='list-wrapper'>
           {
             todoList.filter((value) => value.isDone === true)
-              .map((item) => (<Working key={item.id} item={item} deleteButtonHandler={deleteButtonHandler} doneButtonHandler={doneButtonHandler}
-                cancelButtonHandler={cancelButtonHandler} isDone={item.isDone} />))
+              .map((item) => (<Working key={item.id} item={item} deleteButtonHandler={deleteButtonHandler} 
+                updateButtonHandler={updateButtonHandler} isDone={item.isDone} />))
           }
         </div>
       </div>
