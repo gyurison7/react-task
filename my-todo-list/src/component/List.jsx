@@ -2,7 +2,7 @@ import Working from './Working';
 
 const List = ({ todoList, deleteButtonHandler, updateButtonHandler }) => {
     return (
-        <>
+        <div className='list-container'>
             <h2>Working🔥</h2>
             <div className='list-wrapper'>
                 {
@@ -19,7 +19,7 @@ const List = ({ todoList, deleteButtonHandler, updateButtonHandler }) => {
                             updateButtonHandler={updateButtonHandler} isDone={item.isDone} />))
                 }
             </div>
-        </>
+        </div>
     )
 }
 
