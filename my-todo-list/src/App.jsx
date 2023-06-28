@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Container from './component/Container';
 import Input from './component/Input';
 import List from './component/List';
 
@@ -44,10 +45,7 @@ function App() {
 
   return (
     <div className='layout'>
-      <div className="container">
-        <div>My Todo List</div>
-        <div>React</div>
-      </div>
+      <Container />
       <Input title={title} body={body} contentChangeHandler={contentChangeHandler} addButtonHandler={addButtonHandler} />
       <List todoList={todoList} deleteButtonHandler={deleteButtonHandler} updateButtonHandler={updateButtonHandler} />
     </div>
