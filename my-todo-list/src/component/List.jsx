@@ -1,4 +1,4 @@
-import Working from './Working';
+import Todo from './Todo';
 
 const List = ({ todoList, deleteButtonHandler, updateButtonHandler }) => {
     return (
@@ -7,7 +7,7 @@ const List = ({ todoList, deleteButtonHandler, updateButtonHandler }) => {
             <div className='list-wrapper'>
                 {
                     todoList.filter((value) => value.isDone === false)
-                        .map((item) => (<Working key={item.id} item={item} deleteButtonHandler={deleteButtonHandler}
+                        .map((item) => (<Todo key={item.id} item={item} deleteButtonHandler={deleteButtonHandler}
                             updateButtonHandler={updateButtonHandler} isDone={item.isDone} />))
                 }
             </div>
@@ -15,7 +15,7 @@ const List = ({ todoList, deleteButtonHandler, updateButtonHandler }) => {
             <div className='list-wrapper'>
                 {
                     todoList.filter((value) => value.isDone === true)
-                        .map((item) => (<Working key={item.id} item={item} deleteButtonHandler={deleteButtonHandler}
+                        .map((item) => (<Todo key={item.id} item={item} deleteButtonHandler={deleteButtonHandler}
                             updateButtonHandler={updateButtonHandler} isDone={item.isDone} />))
                 }
             </div>

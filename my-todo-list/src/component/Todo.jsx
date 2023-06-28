@@ -1,4 +1,4 @@
-const Working = ({ item, deleteButtonHandler, updateButtonHandler, isDone }) => {
+const Todo = ({ item, deleteButtonHandler, updateButtonHandler, isDone }) => {
     return (
         <div key={item.id} className='todo-container'>
             <h2>{item.title}</h2>
@@ -16,4 +16,4 @@ const Working = ({ item, deleteButtonHandler, updateButtonHandler, isDone }) => 
     )
 }
 
-export default Working;
+export default Todo;
