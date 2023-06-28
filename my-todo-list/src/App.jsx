@@ -1,5 +1,6 @@
-import './App.css';
 import { useState } from 'react';
+import './App.css';
+import Input from './component/Input';
 import List from './component/List';
 
 function App() {
@@ -47,15 +48,7 @@ function App() {
         <div>My Todo List</div>
         <div>React</div>
       </div>
-      <div className='add-form'>
-        <div className='input-group'>
-          <label className='form-label'>제목</label>
-          <input value={title} onChange={contentChangeHandler} className='add-input' name='title' />
-          <label className='form-label'>내용</label>
-          <input value={body} onChange={contentChangeHandler} className='add-input' name='body' />
-          <button className='add-button' onClick={addButtonHandler}>추가하기</button>
-        </div>
-      </div>
+      <Input title={title} body={body} contentChangeHandler={contentChangeHandler} addButtonHandler={addButtonHandler} />
       <List todoList={todoList} deleteButtonHandler={deleteButtonHandler} updateButtonHandler={updateButtonHandler} />
     </div>
   );
